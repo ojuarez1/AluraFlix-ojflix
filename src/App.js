@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import Footer from "./components/footer";
+import GlobalStyle from "./components/global/globalStyled";
+import Header from "./components/header";
+import Home from "./home";
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
+import NovoVideo from "./novoVideo";
+import Page404 from "./components/page404";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <GlobalStyle />
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/NovoVideo" element={<NovoVideo />} />
+        <Route path="*" element={<Page404/>} />
+      </Routes>
+      <Footer/>
+    </Router>
   );
 }
 
