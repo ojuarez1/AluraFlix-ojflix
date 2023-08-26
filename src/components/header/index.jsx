@@ -1,16 +1,18 @@
 import Boton  from "../boton"
 import "./header.css"
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
+
 
 
 const Header = () => {
     return <section className="header">
         <div>
-            <Link to="/"><img  src="./img/logo.png" alt="Logo" /></Link>
+            <NavLink to="/"><img src="./img/logo.png" alt="Logo" /></NavLink>
         </div>
         <div>
-            <Boton/>
+            <Boton />
         </div>
+        
     </section>
 }
 

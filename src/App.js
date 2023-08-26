@@ -2,14 +2,16 @@ import Footer from "./components/footer";
 import GlobalStyle from "./components/global/globalStyled";
 import Header from "./components/header";
 import Home from "./home";
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
+import {Routes, Route} from "react-router-dom"
 import NovoVideo from "./novoVideo";
 import Page404 from "./components/page404";
+import React from "react";
 
 
 function App() {
+  
   return (
-    <Router>
+    <>
       <GlobalStyle />
       <Header />
       <Routes>
@@ -18,7 +20,7 @@ function App() {
         <Route path="*" element={<Page404/>} />
       </Routes>
       <Footer/>
-    </Router>
+    </>
   );
 }
 

@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { primaryDark } from "../global"
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 
 
 export const Buton = styled.button`
@@ -12,9 +12,10 @@ export const Buton = styled.button`
     color:#ffffff;
     cursor:pointer;
 `
-const Boton = (props) => {
+const Boton = () => {
+    
     return <>
-        <Link to="/NovoVideo"><Buton>Nuevo Video</Buton></Link>
+        <NavLink to="/NovoVideo"><Buton>Nuevo Video</Buton></NavLink>
     </>
 }
 
