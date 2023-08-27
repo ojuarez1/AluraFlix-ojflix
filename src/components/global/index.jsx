@@ -13,7 +13,7 @@ export const colorDatascience = "#9CD33B"
 
 //Colores black
 export const primaryDark = "#000000"
-export const mediumDark = "#454545"
+export const mediumDark = "#1d1b1b"
 export const lightDark = "#565656"
 export const lighterDark = "9E9E9E"
 
