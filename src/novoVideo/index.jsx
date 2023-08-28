@@ -1,8 +1,8 @@
 import Button from "@mui/material/Button"
 import { TextField, Container } from "@mui/material"
 import styled from "styled-components"
-import { mediumDark, lightGris } from "../components/global"
-
+import { lightGris } from "../components/global"
+import "./novoVideo.css"
 
 const Titulo = styled.h1`
         padding:2rem 0;
@@ -21,7 +21,9 @@ const NovoVideo = () => {
                 variant="filled"
                 fullWidth={true}
                 margin="normal"
-        
+                className="fondo"
+                color="success"
+                focused
             />
             <TextField
                 id="filled-basic"
@@ -29,13 +31,21 @@ const NovoVideo = () => {
                 variant="filled"
                 fullWidth={true}
                 margin="normal"
+                className="fondo"
+                color="success"
+                focused
             />
             <TextField
                 id="filled-basic"
                 label="Link imagen del video"
                 variant="filled"
                 fullWidth={true}
-                margin="normal" />
+                margin="normal"
+                className="fondo"
+                color="success"
+                focused
+            />
+            
             <Button variant="contained" >Guardar</Button>
         </Container>
     </form>
