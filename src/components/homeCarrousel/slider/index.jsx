@@ -14,6 +14,12 @@ const Titulo = styled.h2`
   font-weight:400;
   color:${lightGris};
 `
+const Parrafo = styled.div`
+  display:flex;
+  gap:0.5rem;
+  align-items:center;
+  margin-bottom:0.5rem;
+`
 
 export default class MultipleItems extends Component {
   render() {
@@ -28,14 +34,15 @@ export default class MultipleItems extends Component {
       return (
     
         <Container className="slider" maxWidth="xl">
-              <Titulo style={{backgroundColor:this.props.equipo.color}}>{this.props.equipo.title }</Titulo>
+          <Parrafo>
+            <Titulo style={{ backgroundColor: this.props.equipo.color }}>{this.props.equipo.title}</Titulo>
+            <p>{ this.props.equipo.formacion}</p>
+          </Parrafo>
+          
           <Slider {...settings}>    
             {this.props.imagenes.map((imagen, index) => {
               return <div className="contenenedor-img" ><img src={imagen.imagen} alt="Uno" key={index}/></div>
-          })}  
-            
-            
-                     
+          })}           
         </Slider>
       </Container>
     );

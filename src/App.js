@@ -3,7 +3,7 @@ import GlobalStyle from "./components/global/globalStyled";
 import Header from "./components/header";
 import Home from "./home";
 import {Routes, Route} from "react-router-dom"
-import NovoVideo from "./novoVideo";
+import NovoVideo from "./novoVideo/formulario";
 import Page404 from "./components/page404";
 import React from "react";
 import { mediumDark } from "./components/global";
