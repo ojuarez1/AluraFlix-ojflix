@@ -1,11 +1,11 @@
 import MultipleItems from "../slider"
 
-const Carrousel = () => {
+const Carrousel = (props) => {
+
     return <>
-        <MultipleItems />
-        <MultipleItems titulo="Back End"/>
-        <MultipleItems titulo="Innovacion y Gestion"/>
+        <MultipleItems imagenes={props.imagenes} equipo={props.equipo} />       
     </>
 }
+
 
 export default Carrousel

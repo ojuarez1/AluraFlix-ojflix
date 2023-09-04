@@ -4,7 +4,16 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./slider.css"
 import { Container } from "@mui/material";
+import styled from "styled-components";
+import { lightGris } from "../../global";
 
+const Titulo = styled.h2`
+  padding:0.5rem;
+  width:fit-content;
+  border-radius:3px;
+  font-weight:400;
+  color:${lightGris};
+`
 
 export default class MultipleItems extends Component {
   render() {
@@ -15,29 +24,18 @@ export default class MultipleItems extends Component {
       slidesToShow: 3,
       slidesToScroll: 3
     };
+    
       return (
-      
+    
         <Container className="slider" maxWidth="xl">
-              <h2>{this.props.titulo }</h2>
-          <Slider {...settings}>
-          <div >
-            <img src="./img/image1.png" alt="Uno" />
-          </div>
-          <div>
-            <img src="./img/image2.png" alt="Dos" />
-          </div>
-          <div>
-            <img src="./img/image3.png" alt="Tres" />
-          </div>
-          <div>
-            <img src="./img/image1.png" alt="Uno" />
-          </div>
-          <div>
-            <img src="./img/image2.png" alt="Dos" />
-          </div>
-          <div>
-             <img src="./img/image3.png" alt="Tres" />
-          </div>
+              <Titulo style={{backgroundColor:this.props.equipo.color}}>{this.props.equipo.title }</Titulo>
+          <Slider {...settings}>    
+            {this.props.imagenes.map((imagen, index) => {
+              return <div className="contenenedor-img" ><img src={imagen.imagen} alt="Uno" key={index}/></div>
+          })}  
+            
+            
+                     
         </Slider>
       </Container>
     );
