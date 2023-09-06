@@ -12,9 +12,8 @@ export const Buton = styled.button`
     cursor:pointer;
 `
 const Boton = (props) => {
-    console.log(props)
     return <>
-        <Buton style={{width:props.ancho, height:props.alto, backgroundColor:props.color }} >{props.children}</Buton>
+        <Buton style={{width:props.ancho, height:props.alto, backgroundColor:props.color }} >{props.children} </Buton>
     </>
 }
 

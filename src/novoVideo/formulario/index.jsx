@@ -3,7 +3,8 @@ import styled from "styled-components"
 import { lightGris, lightDark } from "../../components/global"
 import CampoTexto from "../campoTexto"
 import Boton from "../../components/boton"
-import { NavLink, Routes, Route } from "react-router-dom"
+import { NavLink } from "react-router-dom"
+import {ValidatorForm} from "react-material-ui-form-validator"
 
 
 const Titulo = styled.h1`
@@ -23,8 +24,8 @@ const NuevoBoton = styled.div`
 `
 
 const NovoVideo = () => {
-    const etiquetas = [{titulo:"Titulo", alto:""},{titulo:"Link del video",alto:""},{titulo:"Link imagen del video", alto:""},{titulo:"Escoja una categoria", alto:""},{titulo:"Descripcion", alto:"10rem"},{titulo:"Codigo de seguridad", alto:""}]
-    return <form>
+    const etiquetas = [{titulo:"Titulo", alto:""},{titulo:"Link del video",alto:""},{titulo:"Link imagen del video", alto:"", requerido:"required"},{titulo:"Escoja una categoria", alto:""},{titulo:"Descripcion", alto:"10rem"},{titulo:"Codigo de seguridad", alto:""}]
+    return <ValidatorForm onSubmit={(e)=> console.log(e)}>
         <Container maxWidth="xl" style={{paddingBottom:"10rem"}}>
             <Titulo>Nuevo video</Titulo>
             {etiquetas.map((etiqueta, index) => {
@@ -41,7 +42,7 @@ const NovoVideo = () => {
             </ContBoton>
                         
         </Container>
-    </form>
+    </ValidatorForm>
 }
 
 export default NovoVideo

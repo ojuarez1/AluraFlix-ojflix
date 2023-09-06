@@ -1,9 +1,10 @@
-import { TextField } from "@mui/material"
+import { useState } from "react"
 import { styled } from '@mui/material/styles';
 import { primaryBlue } from "../../components/global";
+import {TextValidator} from "react-material-ui-form-validator"
 
 
-const CssTextField = styled(TextField)({
+const CssTextField = styled(TextValidator)({
   '& label.Mui-focused': {
     color:'#A0AAB4',
   },
@@ -26,10 +27,14 @@ const CssTextField = styled(TextField)({
   }
 });
 
+
 const CampoTexto = (props) => {
+
+  const [validar, setValidar] = useState("")
  
   return <>
     <CssTextField
+      type="text"
       label={props.label.titulo}
       id="custom-css-outlined-input"
       style={{ margin: "1.5rem 0", width: "100%", backgroundColor: "#53585d", borderRadius: "5px"}}
@@ -39,6 +44,13 @@ const CampoTexto = (props) => {
       InputProps={{
           style:{height:props.label.alto}
       }}
+      value={validar}
+      onChange={(e) => {
+        setValidar(e.target.value)
+      }}
+      //error={validar === ""}
+      //helperText="Incorrect entry."
+       
     />
   </>         
 }
