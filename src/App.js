@@ -8,7 +8,8 @@ import Page404 from "./components/page404";
 import React from "react";
 import { mediumDark } from "./components/global";
 import styled from "styled-components";
-import NuevaCategoria from "./components/nuevaCategoria";
+import NuevaCategoria from "./components/registro/nuevaCategoria";
+
 
 const Fondo = styled.div`
   background-color: ${mediumDark};

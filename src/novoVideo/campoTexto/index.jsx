@@ -12,9 +12,6 @@ const CssTextField = styled(TextValidator)({
     borderBottomColor: '#B2BAC2',
   },
   '& .MuiOutlinedInput-root': {
-    // '& fieldset': {
-    //   borderColor: '#E0E3E7',
-    // },
     '&:hover fieldset': {
       borderColor:primaryBlue,
     },
@@ -29,25 +26,27 @@ const CssTextField = styled(TextValidator)({
 
 
 const CampoTexto = (props) => {
-
+  const {tipo = "text", titulo, alto, multiline} = props.label
   const [validar, setValidar] = useState("")
  
   return <>
     <CssTextField
-      type="text"
-      label={props.label.titulo}
+      type={tipo}
+      label={titulo}
       id="custom-css-outlined-input"
       style={{ margin: "1.5rem 0", width: "100%", backgroundColor: "#53585d", borderRadius: "5px"}}
       InputLabelProps={{
           style:{color:"#C2C2C2"}
       }}
       InputProps={{
-          style:{height:props.label.alto}
+          style:{height:alto}
       }}
       value={validar}
       onChange={(e) => {
         setValidar(e.target.value)
       }}
+      multiline={multiline}
+      maxRows={5}
       //error={validar === ""}
       //helperText="Incorrect entry."
        
