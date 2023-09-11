@@ -41,7 +41,7 @@ export default class MultipleItems extends Component {
           
           <Slider {...settings}>    
             {this.props.imagenes.map((imagen, index) => {
-              return <div className="contenenedor-img" ><img src={imagen.imagen} alt="Uno" key={index}/></div>
+              return <div className="contenenedor-img" key={index}><img src={imagen.imagen} alt="Uno" /></div>
           })}           
         </Slider>
       </Container>

@@ -28,14 +28,13 @@ const NuevaCategoria = () => {
         {
             titulo: "Todos los video de la área de Front End colocar en esta categoría para organizar los estudios que vengo haciendo actualmente",
             alto: "",
-            multiline: "true"
+            multiline: true
         },
         {
             titulo: "",
             alto: "",
             requerido: "required",
-            tipo: "color",
-            value:"#E5DE10"
+            tipo: "color"
         },
         {
             titulo: "Codigo de seguridad",

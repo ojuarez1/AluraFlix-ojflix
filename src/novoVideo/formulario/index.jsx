@@ -3,8 +3,10 @@ import styled from "styled-components"
 import { lightGris, lightDark } from "../../components/global"
 import CampoTexto from "../campoTexto"
 import Boton from "../../components/boton"
-import { NavLink } from "react-router-dom"
+import { NavLink, Routes, Route} from "react-router-dom"
 import {ValidatorForm} from "react-material-ui-form-validator"
+import NuevaCategoria from "../../components/registro/nuevaCategoria"
+
 
 const Titulo = styled.h1`
     padding:2rem 0;
@@ -44,7 +46,7 @@ const NovoVideo = () => {
         },
         {
             titulo: "Descripcion",
-            multiline: "true"
+            multiline: true
         },
         {
             titulo: "Codigo de seguridad",
@@ -63,9 +65,9 @@ const NovoVideo = () => {
                     <Boton ancho="180px" alto="54px" color="#2A7AE4" >Guardar</Boton>
                     <Boton ancho="180px" alto="54px" color={lightDark} >Limpiar</Boton>
                 </NuevoBoton>
-        
-                <NavLink to="/NuevaCategoria"><Boton ancho="254px" alto="54px" color="#2A7AE4" >Nueva categoria</Boton></NavLink> 
-            
+                
+                <NavLink to="/NuevaCategoria"><Boton ancho="254px" alto="54px" color="#2A7AE4" >Nueva categoria</Boton></NavLink>
+                
             </ContBoton>
                         
         </Container>
