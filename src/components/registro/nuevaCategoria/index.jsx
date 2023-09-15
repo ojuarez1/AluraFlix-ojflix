@@ -1,4 +1,4 @@
-import CampoTexto from "../../../novoVideo/campoTexto"
+import CampoTexto from "../nuevoVideo/campoTexto/index"
 import { ValidatorForm } from "react-material-ui-form-validator"
 import { Container } from "@mui/material"
 import { styled } from "styled-components"
@@ -43,7 +43,7 @@ const NuevaCategoria = () => {
     ]
     
     return <Container maxWidth="xl">
-        <Titulo>Nuevo video</Titulo>
+        <Titulo>Nueva Categoria</Titulo>
         <ValidatorForm onSubmit={(e)=> console.log(e)}>
             {etiquetas.map((etiqueta, index) => {
                 return <CampoTexto label={etiqueta} key={index} />

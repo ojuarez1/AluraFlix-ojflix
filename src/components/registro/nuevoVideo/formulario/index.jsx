@@ -1,11 +1,12 @@
 import { Container } from "@mui/material"
 import styled from "styled-components"
-import { lightGris, lightDark } from "../../components/global"
+import { lightGris, lightDark } from "../../../global"
 import CampoTexto from "../campoTexto"
-import Boton from "../../components/boton"
-import { NavLink, Routes, Route} from "react-router-dom"
-import {ValidatorForm} from "react-material-ui-form-validator"
-import NuevaCategoria from "../../components/registro/nuevaCategoria"
+import Boton from "../../../boton"
+import { NavLink} from "react-router-dom"
+import { ValidatorForm } from "react-material-ui-form-validator"
+import { useState } from "react"
+
 
 
 const Titulo = styled.h1`
@@ -25,36 +26,69 @@ const NuevoBoton = styled.div`
 `
 
 const NovoVideo = () => {
+    const [titulo, setTitulo] = useState("")
+    const [linkVideo, setLinkVideo] = useState("")
+    const [linkImagen, setLinkImagen] = useState("")
+    const [categoria, setCategoria] = useState("")
+    const [descripcion, setDescripcion] = useState("")
+    const [codigoSeguridad, setCodigoSeguridad] = useState("")
+
+    const manejarEnvio = (e) => {
+        e.preventDefault()
+        const videos = {
+            titulo,
+            linkVideo,
+            linkImagen,
+            categoria,
+            descripcion,
+            codigoSeguridad
+        }
+        console.log(videos)
+    }
 
     const etiquetas = [
         {
             titulo: "Titulo",
-            alto: ""
+            alto: "",
+            valor:titulo,
+            actualizarValor:setTitulo
         },
         {
             titulo: "Link del video",
-            alto: ""
+            alto: "",
+            valor:linkVideo,
+            actualizarValor:setLinkVideo
         },
         {
             titulo: "Link imagen del video",
             alto: "",
-            requerido: "required"
+            requerido: "required",
+            valor:linkImagen,
+            actualizarValor:setLinkImagen
         },
         {
             titulo: "Escoja una categoria",
-            alto: ""
+            alto: "",
+            valor:categoria,
+            actualizarValor:setCategoria
         },
         {
             titulo: "Descripcion",
-            multiline: true
+            multiline: true,
+            valor:descripcion,
+            actualizarValor:setDescripcion
         },
         {
             titulo: "Codigo de seguridad",
-            alto: ""
+            alto: "",
+            valor:codigoSeguridad,
+            actualizarValor:setCodigoSeguridad
         }
     ]
     
-    return <ValidatorForm onSubmit={(e)=> console.log(e)}>
+    return <ValidatorForm onSubmit={(e) => {
+        manejarEnvio(e)
+    }}>
         <Container maxWidth="xl" style={{paddingBottom:"10rem"}}>
             <Titulo>Nuevo video</Titulo>
             {etiquetas.map((etiqueta, index) => {

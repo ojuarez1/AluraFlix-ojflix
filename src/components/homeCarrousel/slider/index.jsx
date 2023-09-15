@@ -6,6 +6,7 @@ import "./slider.css"
 import { Container } from "@mui/material";
 import styled from "styled-components";
 import { lightGris } from "../../global";
+import ReactPlayer from "react-player"
 
 const Titulo = styled.h2`
   padding:0.5rem;
@@ -41,7 +42,10 @@ export default class MultipleItems extends Component {
           
           <Slider {...settings}>    
             {this.props.imagenes.map((imagen, index) => {
-              return <div className="contenenedor-img" key={index}><img src={imagen.imagen} alt="Uno" /></div>
+              return <div className="contenenedor-img" key={index}>
+               <img src={imagen.imagen} alt="Uno" />
+                
+              </div>
           })}           
         </Slider>
       </Container>

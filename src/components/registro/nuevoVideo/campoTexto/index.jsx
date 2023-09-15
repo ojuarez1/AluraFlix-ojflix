@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { styled } from '@mui/material/styles';
-import { primaryBlue } from "../../components/global";
+import { primaryBlue } from "../../../global";
 import {TextValidator} from "react-material-ui-form-validator"
 import {validaciones} from "./validaciones.js"
 
@@ -27,8 +27,12 @@ const CssTextField = styled(TextValidator)({
 
 
 const CampoTexto = (props) => {
-  const {tipo = "text", titulo, alto, multiline} = props.label
-  const [title, setTitle] = useState({valor:"hola", valid:""})
+  const {tipo = "text", titulo, alto, multiline, valor, actualizarValor} = props.label
+  const [title, setTitle] = useState({ valor: "", valid: "" })
+  
+  const manejarCambio = (e) => {
+    actualizarValor(e.target.value)
+  }
  
   return <>
     <CssTextField
@@ -42,11 +46,11 @@ const CampoTexto = (props) => {
       InputProps={{
           style:{height:alto}
       }}
-      value={title.valor}
+      value={valor}
       onChange={(e) => {
         const valida = validaciones(e.target.value)
         setTitle({title:{valor:e.target.value, valid:valida}})
-        
+        manejarCambio(e)
       }}
       multiline={multiline}
       maxRows={5}

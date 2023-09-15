@@ -1,6 +1,6 @@
 import Banner from "../components/banner"
 import Carrousel from "../components/homeCarrousel/carrousel"
-import { colorBackend, colorInovation, colorFrontend } from "../components/global"
+import { colorBackend, colorInovation} from "../components/global"
 
 
 
