@@ -51,7 +51,8 @@ const NovoVideo = () => {
             titulo: "Titulo",
             alto: "",
             valor:titulo,
-            actualizarValor:setTitulo
+            actualizarValor: setTitulo
+            
         },
         {
             titulo: "Link del video",
