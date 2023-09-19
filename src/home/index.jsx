@@ -24,7 +24,7 @@ const Home = () => {
     const imagenes = [
         {
             titulo: "",
-            link:  "https://www.youtube.com/watch?v=R9uaBxgCkyA",
+            link:  "https://www.youtube.com/embed/eejIHbOk_uI?si=e72Q9CPexveFAI-q",
             imagen:"./img/image1.png"
         },
         {
@@ -42,7 +42,7 @@ const Home = () => {
         },
         {
             titulo: "Back-End",
-            link:"https://www.youtube.com/watch?v=aYoSI5454cg",
+            link:"https://www.youtube.com/embed/Z024LSCMqFk?si=3h_DjawTk5FvdJec",
             imagen: "./img/image4.png"
         }, 
         {
@@ -59,7 +59,7 @@ const Home = () => {
         },
         {
             titulo: "Innovacion y Gestion",
-            link:"https://www.youtube.com/watch?v=EotPDnthjBE",
+            link:"https://www.youtube.com/embed/Yfm16Tlpcwk?si=ZhJ2-fb6JncYJqAx",
             imagen: "./img/image7.png"
         },
         {

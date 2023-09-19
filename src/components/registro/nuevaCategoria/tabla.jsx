@@ -4,7 +4,7 @@ import { lightGris } from "../../global"
 const TablaCont = styled.table`
     border:1px solid blue;
     margin:1.5rem 0 7rem;
-    width:100%
+    width:100%;
 `
 
 const Header = styled.th`

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {useState, useEffect} from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
@@ -6,7 +6,9 @@ import "./slider.css"
 import { Container } from "@mui/material";
 import styled from "styled-components";
 import { lightGris } from "../../global";
-import ReactPlayer from "react-player"
+import { buscar } from "../../../api/api";
+
+
 
 const Titulo = styled.h2`
   padding:0.5rem;
@@ -22,8 +24,18 @@ const Parrafo = styled.div`
   margin-bottom:0.5rem;
 `
 
-export default class MultipleItems extends Component {
-  render() {
+const MultipleItems = (props) => {
+  const [posts, setPosts] = useState([])
+
+  const { color, title, formacion } = props.equipo
+  const {url} = props
+  
+  useEffect(() => {
+    buscar(url, setPosts)
+    console.log(posts)
+  }, [url])
+
+  
     const settings = {
       dots: true,
       infinite: true,
@@ -36,20 +48,20 @@ export default class MultipleItems extends Component {
     
         <Container className="slider" maxWidth="xl">
           <Parrafo>
-            <Titulo style={{ backgroundColor: this.props.equipo.color }}>{this.props.equipo.title}</Titulo>
-            <p>{ this.props.equipo.formacion}</p>
+            <Titulo style={{ backgroundColor:color }}>{title}</Titulo>
+            <p>{formacion}</p>
           </Parrafo>
           
           <Slider {...settings}>    
-            {this.props.imagenes.map((imagen, index) => {
+            {props.imagenes.map((imagen, index) => {
               return <div className="contenenedor-img" key={index}>
-                {/* <img src={imagen.imagen} alt="Uno" /> */}
-                <ReactPlayer url={imagen.link} />
-                
+                <iframe width="560" height="315" src={imagen.link} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                {/* <ReactPlayer url={imagen.link} /> */}
               </div>
           })}           
         </Slider>
       </Container>
     );
   }
-}
+
+export default MultipleItems
