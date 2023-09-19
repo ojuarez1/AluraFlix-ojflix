@@ -6,7 +6,7 @@ import "./slider.css"
 import { Container } from "@mui/material";
 import styled from "styled-components";
 import { lightGris } from "../../global";
-import { buscar } from "../../../api/api";
+import { buscar } from "../../../api/api.js";
 
 
 
@@ -25,14 +25,14 @@ const Parrafo = styled.div`
 `
 
 const MultipleItems = (props) => {
-  const [posts, setPosts] = useState([])
+  const [gets, setGets] = useState([])
 
   const { color, title, formacion } = props.equipo
   const {url} = props
   
   useEffect(() => {
-    buscar(url, setPosts)
-    console.log(posts)
+    buscar(url, setGets)
+    console.log(gets)
   }, [url])
 
   

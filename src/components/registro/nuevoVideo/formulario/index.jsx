@@ -6,6 +6,7 @@ import Boton from "../../../boton"
 import { NavLink} from "react-router-dom"
 import { ValidatorForm } from "react-material-ui-form-validator"
 import { useState } from "react"
+import axios from "axios"
 
 
 
@@ -26,6 +27,8 @@ const NuevoBoton = styled.div`
 `
 
 const NovoVideo = () => {
+    //const [videos, setVideos] = useState([])
+    
     const [titulo, setTitulo] = useState("")
     const [linkVideo, setLinkVideo] = useState("")
     const [linkImagen, setLinkImagen] = useState("")
@@ -33,9 +36,9 @@ const NovoVideo = () => {
     const [descripcion, setDescripcion] = useState("")
     const [codigoSeguridad, setCodigoSeguridad] = useState("")
 
-    const manejarEnvio = (e) => {
+    const manejarEnvio = async(e) => {
         e.preventDefault()
-        const videos = {
+        const newVideo = {
             titulo,
             linkVideo,
             linkImagen,
@@ -43,7 +46,9 @@ const NovoVideo = () => {
             descripcion,
             codigoSeguridad
         }
-        console.log(videos)
+        
+        await axios.post("http://localhost:5000/videos", newVideo)
+
     }
 
     const etiquetas = [
