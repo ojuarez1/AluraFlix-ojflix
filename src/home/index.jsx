@@ -1,10 +1,21 @@
 import Banner from "../components/banner"
 import Carrousel from "../components/homeCarrousel/carrousel"
-import { colorBackend, colorInovation} from "../components/global"
+import { colorBackend, colorInovation } from "../components/global"
+import { buscar } from "../api/api";
+import { useState, useEffect } from "react"
 
 
 
-const Home = () => {
+
+const Home = ({url}) => {
+    const [gets, setGets] = useState([])
+    
+
+    useEffect(() => {
+        buscar(url, setGets)
+        console.log(gets)
+    }, [url])
+
     const equipos = [
         {
             title: "",
@@ -77,7 +88,7 @@ const Home = () => {
     return <>
         <Banner />
         {equipos.map((equipo, index) => {
-          return <Carrousel imagenes={imagenes.filter(image => image.titulo === equipo.title)} key={index} equipo={equipo} />
+          return <Carrousel imagenes={gets.filter(image => image.categoria === equipo.title)} key={index} equipo={equipo} />
         })}
         
     </>

@@ -20,7 +20,7 @@ function App() {
       <GlobalStyle />
       <Header />
       <Routes>
-        <Route path="/" element={<Home/>} />
+        <Route path="/" element={<Home url="/videos"/>} />
         <Route path="/NovoVideo" element={<NovoVideo />} />
         <Route path="/NuevaCategoria" element={<NuevaCategoria/>} />
         <Route path="*" element={<Page404/>} />

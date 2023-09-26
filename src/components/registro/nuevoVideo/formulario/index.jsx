@@ -5,10 +5,8 @@ import CampoTexto from "../campoTexto"
 import Boton from "../../../boton"
 import { NavLink} from "react-router-dom"
 import { ValidatorForm } from "react-material-ui-form-validator"
-import { useState } from "react"
+import { useState} from "react"
 import axios from "axios"
-
-
 
 const Titulo = styled.h1`
     padding:2rem 0;
@@ -29,6 +27,7 @@ const NuevoBoton = styled.div`
 const NovoVideo = () => {
     //const [videos, setVideos] = useState([])
     
+
     const [titulo, setTitulo] = useState("")
     const [linkVideo, setLinkVideo] = useState("")
     const [linkImagen, setLinkImagen] = useState("")
@@ -51,6 +50,7 @@ const NovoVideo = () => {
 
     }
 
+    
     const etiquetas = [
         {
             titulo: "Titulo",

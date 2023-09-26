@@ -1,4 +1,3 @@
-import React, {useState, useEffect} from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
@@ -6,7 +5,7 @@ import "./slider.css"
 import { Container } from "@mui/material";
 import styled from "styled-components";
 import { lightGris } from "../../global";
-import { buscar } from "../../../api/api.js";
+
 
 
 
@@ -24,44 +23,39 @@ const Parrafo = styled.div`
   margin-bottom:0.5rem;
 `
 
+
+
 const MultipleItems = (props) => {
-  const [gets, setGets] = useState([])
 
   const { color, title, formacion } = props.equipo
-  const {url} = props
+    
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3
+  };
   
-  useEffect(() => {
-    buscar(url, setGets)
-    console.log(gets)
-  }, [url])
+  return (
 
-  
-    const settings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 3,
-      slidesToScroll: 3
-    };
-    
-      return (
-    
-        <Container className="slider" maxWidth="xl">
-          <Parrafo>
-            <Titulo style={{ backgroundColor:color }}>{title}</Titulo>
-            <p>{formacion}</p>
-          </Parrafo>
-          
-          <Slider {...settings}>    
-            {props.imagenes.map((imagen, index) => {
-              return <div className="contenenedor-img" key={index}>
-                <iframe width="560" height="315" src={imagen.link} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                {/* <ReactPlayer url={imagen.link} /> */}
-              </div>
-          })}           
-        </Slider>
-      </Container>
-    );
-  }
+    <Container className="slider" maxWidth="xl">
+      <Parrafo>
+        <Titulo style={{ backgroundColor:color }}>{title}</Titulo>
+        <p>{formacion}</p>
+      </Parrafo>
+      
+      <Slider {...settings}>    
+        {props.imagenes.map((imagen, index) => {
+          return <div className="contenenedor-img" key={index}>
+            <iframe width="100%" height="215" src={imagen.linkVideo} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            {/* <ReactPlayer url={imagen.link} /> */}
+          </div>
+          })
+        }           
+      </Slider>
+    </Container>
+  );
+}
 
 export default MultipleItems

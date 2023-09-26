@@ -4,7 +4,7 @@
       "titulo": "Que significa ser un desarrollador fulstack",
       "linkVideo": "https://www.youtube.com/embed/eejIHbOk_uI?si=e72Q9CPexveFAI-q",
       "linkImagen": "https://",
-      "categoria": "Front-End",
+      "categoria": "",
       "descripcion": "Algo",
       "codigoSeguridad": "3",
       "id": 1
@@ -13,19 +13,10 @@
       "titulo": "Back-end vs Front-end",
       "linkVideo": "https://www.youtube.com/embed/Z024LSCMqFk?si=3h_DjawTk5FvdJec",
       "linkImagen": "https://",
-      "categoria": "Back-end",
+      "categoria": "Back-End",
       "descripcion": "Algo",
       "codigoSeguridad": "125",
       "id": 2
-    },
-    {
-      "titulo": "Aprendiendo React",
-      "linkVideo": "https://",
-      "linkImagen": "https://",
-      "categoria": "back end",
-      "descripcion": "algo",
-      "codigoSeguridad": "003",
-      "id": 3
     }
   ]
 }
