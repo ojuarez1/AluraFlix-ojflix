@@ -17,6 +17,15 @@
       "descripcion": "Algo",
       "codigoSeguridad": "125",
       "id": 2
+    },
+    {
+      "titulo": "Desarrollador fulstack",
+      "linkVideo": "https://www.youtube.com/embed/Z024LSCMqFk?si=3h_DjawTk5FvdJec",
+      "linkImagen": "https://",
+      "categoria": "",
+      "descripcion": "Algo",
+      "codigoSeguridad": "3",
+      "id": 3
     }
   ]
 }

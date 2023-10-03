@@ -36,9 +36,9 @@ const MultipleItems = (props) => {
     slidesToShow: 3,
     slidesToScroll: 3
   };
-  
-  return (
 
+  return (
+    
     <Container className="slider" maxWidth="xl">
       <Parrafo>
         <Titulo style={{ backgroundColor:color }}>{title}</Titulo>
@@ -47,6 +47,7 @@ const MultipleItems = (props) => {
       
       <Slider {...settings}>    
         {props.imagenes.map((imagen, index) => {
+          console.log(imagen)
           return <div className="contenenedor-img" key={index}>
             <iframe width="100%" height="215" src={imagen.linkVideo} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             {/* <ReactPlayer url={imagen.link} /> */}

@@ -1,21 +1,24 @@
 import Banner from "../components/banner"
 import Carrousel from "../components/homeCarrousel/carrousel"
 import { colorBackend, colorInovation } from "../components/global"
-import { buscar } from "../api/api";
+import axios from "axios"
 import { useState, useEffect } from "react"
 
 
 
 
-const Home = ({url}) => {
-    const [gets, setGets] = useState([])
+const Home = () => {
+    //const [imagenes, setImagenes] = useState()
     
-
+    /* const fetchData = async () => {
+      return await axios.get("http://localhost:5000/videos").then((respuesta)=>setImagenes(respuesta.data))
+    }
+    
     useEffect(() => {
-        buscar(url, setGets)
-        console.log(gets)
-    }, [url])
-
+     fetchData()
+    }, []) */ 
+  
+    //.filter(image => image.titulo === equipo.title)
     const equipos = [
         {
             title: "",
@@ -31,64 +34,31 @@ const Home = ({url}) => {
             title: "Innovacion y Gestion",
             color: colorInovation,
             formacion: "Formacion Innovacion y Gestion de Alura Latam"
-        }]
+    }]
+  
     const imagenes = [
-        {
-            titulo: "",
-            link:  "https://www.youtube.com/embed/eejIHbOk_uI?si=e72Q9CPexveFAI-q",
-            imagen:"./img/image1.png"
-        },
-        {
-            titulo: "",
-            imagen: "./img/image2.png"
-            
-        },
-        {
-            titulo: "",
-            imagen: "./img/image3.png"
-        },
-        {
-            titulo: "",
-            imagen: "./img/image1.png"
-        },
-        {
-            titulo: "Back-End",
-            link:"https://www.youtube.com/embed/Z024LSCMqFk?si=3h_DjawTk5FvdJec",
-            imagen: "./img/image4.png"
-        }, 
-        {
-            titulo: "Back-End",
-            imagen: "./img/image5.png"
-        },
-        {
-            titulo: "Back-End",
-            imagen: "./img/image6.png"
-        },
-        {
-            titulo: "Back-End",
-            imagen: "./img/image4.png"
-        },
-        {
-            titulo: "Innovacion y Gestion",
-            link:"https://www.youtube.com/embed/Yfm16Tlpcwk?si=ZhJ2-fb6JncYJqAx",
-            imagen: "./img/image7.png"
-        },
-        {
-            titulo: "Innovacion y Gestion",
-            imagen: "./img/image8.png"
-        },
-        {
-            titulo: "Innovacion y Gestion",
-            imagen: "./img/image9.png"
-        },
-        {
-            titulo: "Innovacion y Gestion",
-            imagen: "./img/image7.png"
-        }]
+    {
+      titulo: "",
+      linkVideo:  "https://www.youtube.com/embed/eejIHbOk_uI?si=e72Q9CPexveFAI-q",
+      imagen:"./img/image1.png"
+    },
+    {
+      titulo: "Back-End",
+      linkVideo:"https://www.youtube.com/embed/Z024LSCMqFk?si=3h_DjawTk5FvdJec",
+      imagen: "./img/image4.png"
+    },
+    {
+      titulo: "Innovacion y Gestion",
+      linkVideo:"https://www.youtube.com/embed/Yfm16Tlpcwk?si=ZhJ2-fb6JncYJqAx",
+      imagen: "./img/image7.png"
+      }
+    ]
+
     return <>
         <Banner />
+        
         {equipos.map((equipo, index) => {
-          return <Carrousel imagenes={gets.filter(image => image.categoria === equipo.title)} key={index} equipo={equipo} />
+          return <Carrousel imagenes={imagenes.filter(imagen => imagen.titulo === equipo.title)} key={index} equipo={equipo} />
         })}
         
     </>
