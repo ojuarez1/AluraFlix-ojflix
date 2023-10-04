@@ -15,10 +15,11 @@ const Fondo = styled.div`
   background-color: ${mediumDark};
 `
 function App() {  
+  
   return (
     <Fondo>
       <GlobalStyle />
-      <Header />
+      <Header ruta="/"/>
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/NovoVideo" element={<NovoVideo />} />

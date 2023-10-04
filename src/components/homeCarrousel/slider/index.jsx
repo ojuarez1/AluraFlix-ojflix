@@ -31,9 +31,10 @@ const MultipleItems = (props) => {
     
   const settings = {
     dots: true,
-    infinite: true,
+    infinite:true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 3
+    ,
     slidesToScroll: 3
   };
 
@@ -47,9 +48,8 @@ const MultipleItems = (props) => {
       
       <Slider {...settings}>    
         {props.imagenes.map((imagen, index) => {
-          console.log(imagen)
           return <div className="contenenedor-img" key={index}>
-            <iframe width="100%" height="215" src={imagen.linkVideo} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe width="95%" height="215" src={imagen.linkVideo} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             {/* <ReactPlayer url={imagen.link} /> */}
           </div>
           })
