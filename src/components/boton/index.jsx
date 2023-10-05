@@ -13,7 +13,7 @@ export const Buton = styled.button`
 `
 const Boton = (props) => {
     return <>
-        <Buton style={{width:props.ancho, height:props.alto, backgroundColor:props.color }} >{props.children} </Buton>
+        <Buton style={{width:props.ancho, height:props.alto, backgroundColor:props.color }} onClick={props.submitBoton} >{props.children} </Buton>
     </>
 }
 

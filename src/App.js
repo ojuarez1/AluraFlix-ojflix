@@ -19,7 +19,7 @@ function App() {
   return (
     <Fondo>
       <GlobalStyle />
-      <Header ruta="/"/>
+      <Header/>
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/NovoVideo" element={<NovoVideo />} />

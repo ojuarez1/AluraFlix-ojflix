@@ -24,8 +24,17 @@ const NuevoBoton = styled.div`
     justify-content:space-between;
 `
 
+const Lista = styled.select`
+    margin: 1.5rem 0;
+    width: 100%;
+    background-color:#53585d;
+    border-radius: 5px;
+    padding:1rem 0.5rem;
+    color:#fff;
+`
+
 const NovoVideo = () => {
-    //const [videos, setVideos] = useState([])
+    const [opciones, setOpciones] = useState()
     
 
     const [titulo, setTitulo] = useState("")
@@ -49,9 +58,18 @@ const NovoVideo = () => {
         await axios.post("http://localhost:5000/videos", newVideo)
 
     }
-
     
-    const etiquetas = [
+    const submitBoton = (e) => {
+        e.preventDefault()
+        setTitulo("")
+        setLinkVideo("")
+        setLinkImagen("")
+        setCategoria("")
+        setDescripcion("")
+        setCodigoSeguridad("")
+    }
+    
+    const etiquetasLink = [
         {
             titulo: "Titulo",
             alto: "",
@@ -71,19 +89,9 @@ const NovoVideo = () => {
             requerido: "required",
             valor:linkImagen,
             actualizarValor:setLinkImagen
-        },
-        {
-            titulo: "Escoja una categoria",
-            alto: "",
-            valor:categoria,
-            actualizarValor:setCategoria
-        },
-        {
-            titulo: "Descripcion",
-            multiline: true,
-            valor:descripcion,
-            actualizarValor:setDescripcion
-        },
+        }
+    ]
+    const CodigoSeguridad = [
         {
             titulo: "Codigo de seguridad",
             alto: "",
@@ -91,19 +99,30 @@ const NovoVideo = () => {
             actualizarValor:setCodigoSeguridad
         }
     ]
+
+    const listaOpciones = ["Front-End","Back-End","Innovacion y Gestion" ]
     
     return <ValidatorForm onSubmit={(e) => {
         manejarEnvio(e)
     }}>
         <Container maxWidth="xl" style={{paddingBottom:"10rem"}}>
             <Titulo>Nuevo video</Titulo>
-            {etiquetas.map((etiqueta, index) => {
+            {etiquetasLink.map((etiqueta, index) => {
                 return <CampoTexto label={etiqueta} key={index}/>
             })}
+
+            <Lista value={opciones} onChange={(e) => {
+                return setOpciones(e.target.value)
+            }}>
+                <option value="" disable="" defaultValue="" hidden>Escoja una categoria</option>
+                {listaOpciones.map((opcion, index) => <option key={index} >{ opcion }</option> )}
+            </Lista>
+            <textarea cols="30" rows="10" placeholder="Descripcion"></textarea>
+            {CodigoSeguridad.map((etiqueta, index) =>< CampoTexto label = {etiqueta} key={index} />)}
             <ContBoton>
                 <NuevoBoton>
                     <Boton ancho="180px" alto="54px" color="#2A7AE4" >Guardar</Boton>
-                    <Boton ancho="180px" alto="54px" color={lightDark} >Limpiar</Boton>
+                    <Boton ancho="180px" alto="54px" color={lightDark} submitBoton={submitBoton} >Limpiar</Boton>
                 </NuevoBoton>
                 
                 <NavLink to="/NuevaCategoria"><Boton ancho="254px" alto="54px" color="#2A7AE4" >Nueva categoria</Boton></NavLink>
