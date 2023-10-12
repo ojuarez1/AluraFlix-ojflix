@@ -33,6 +33,18 @@ const Lista = styled.select`
     color:#fff;
 `
 
+const Textarea = styled.textarea`
+    background-color:#53585d;
+    width: 100%;
+    border-radius: 5px;
+    padding:1rem 0.5rem;
+    color:#fff;
+    &::placeholder {
+       color: #C2C2C2;
+       font-family: "Open Sans"
+   }
+`
+
 const NovoVideo = () => {
     const [opciones, setOpciones] = useState()
     
@@ -117,7 +129,7 @@ const NovoVideo = () => {
                 <option value="" disable="" defaultValue="" hidden>Escoja una categoria</option>
                 {listaOpciones.map((opcion, index) => <option key={index} >{ opcion }</option> )}
             </Lista>
-            <textarea cols="30" rows="10" placeholder="Descripcion"></textarea>
+            <Textarea cols="30" rows="10" placeholder="Descripcion" ></Textarea>
             {CodigoSeguridad.map((etiqueta, index) =>< CampoTexto label = {etiqueta} key={index} />)}
             <ContBoton>
                 <NuevoBoton>

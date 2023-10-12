@@ -1,4 +1,5 @@
 import Boton  from "../boton"
+import NovoVideo from "../registro/nuevoVideo/formulario"
 import "./header.css"
 import { NavLink, Routes, Route } from "react-router-dom"
 
